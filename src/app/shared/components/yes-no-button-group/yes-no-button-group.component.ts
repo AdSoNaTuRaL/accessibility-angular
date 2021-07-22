@@ -1,3 +1,4 @@
+import { UniqueIdService } from './../../services/unique-id.service';
 import { Component, OnInit, Input, Output, EventEmitter, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -9,22 +10,24 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     {
       provide: NG_VALUE_ACCESSOR,
       multi: true,
-      useExisting: forwardRef(() => YesNoButtonGroupComponent)
-    }
-  ]
+      useExisting: forwardRef(() => YesNoButtonGroupComponent),
+    },
+  ],
 })
 export class YesNoButtonGroupComponent implements OnInit, ControlValueAccessor {
   @Input() public value: string = null;
   @Input() public label = '';
   @Output() public valueChange = new EventEmitter<string>();
+  public id: string = null;
   public options = YesNoButtonGroupOptions;
   public onChange = (value: string) => {};
   public onTouched = () => {};
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(uniqueIdService: UniqueIdService) {
+    this.id = uniqueIdService.generateUniqueIdWithPrefix('yes-no-button-group');
   }
+
+  ngOnInit(): void {}
 
   public writeValue(value: string): void {
     this.value = value;
@@ -41,7 +44,7 @@ export class YesNoButtonGroupComponent implements OnInit, ControlValueAccessor {
   }
 
   public setDisabledState?(isDisabled: boolean): void {
-    throw new Error("Method not implemented.");
+    throw new Error('Method not implemented.');
   }
 
   public activate(value: string): void {
@@ -51,5 +54,5 @@ export class YesNoButtonGroupComponent implements OnInit, ControlValueAccessor {
 
 enum YesNoButtonGroupOptions {
   YES = 'yes',
-  NO = 'no'
+  NO = 'no',
 }
