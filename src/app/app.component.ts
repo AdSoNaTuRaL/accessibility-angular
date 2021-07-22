@@ -4,7 +4,6 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'acessibility';
@@ -12,7 +11,12 @@ export class AppComponent {
 
   constructor(formBuilder: FormBuilder) {
     this.form = formBuilder.group({
-      yesNoAnswer: [null],
+      yesNoAnswer: [
+        {
+          value: null,
+          disabled: false,
+        },
+      ],
     });
   }
 
