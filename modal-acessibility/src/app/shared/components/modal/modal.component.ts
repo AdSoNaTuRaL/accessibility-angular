@@ -1,3 +1,4 @@
+import { ModalConfig } from './modal';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./modal.component.scss'],
 })
 export class ModalComponent implements OnInit {
+  config: ModalConfig;
+
   constructor() {}
 
   ngOnInit(): void {}
