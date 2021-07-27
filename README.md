@@ -1,5 +1,5 @@
 <div align="center">
-   <h1> 🦽 ACESSIBILITY ANGULAR </h1>
+   <h1> 🦽 ACCESSIBILITY ANGULAR </h1>
 </div>
 
 Repository created to practice accessibility techniques on angular components, following W3C accessibility standards
@@ -27,5 +27,5 @@ $ ng s --o
 
 ## ⚙️ Issues
 
-Feel free to **create a new issue** with a respective title and description on the [acessibility-angular](https://github.com/AdSoNaTuRaL/accessibility-angular/issues) repository.
+Feel free to **create a new issue** with a respective title and description on the [accessibility-angular](https://github.com/AdSoNaTuRaL/accessibility-angular/issues) repository.
 If you already found a solution to your problem, **I would love to review your pull request**!
